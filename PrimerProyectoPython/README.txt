@@ -28,5 +28,5 @@ La aplicación debe cumplir con los siguientes requisitos mínimos:
 Temática:
 
     He decidido usar PokéAPI (https://pokeapi.co/api/v2/pokemon-form/).
-    Mi aplicación escogerá un poquemon aleatoriamente y mostrará la imagen al usuario, el cual debe introducir el nombre del mismo. 
+    Mi aplicación escogerá un pokemon aleatoriamente y mostrará la imagen al usuario, el cual debe introducir el nombre del mismo. 
     El lenguaje a usar es Python3 y crearé la interfaz para el usuario con Tkinter.

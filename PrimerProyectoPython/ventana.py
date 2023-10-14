@@ -1,11 +1,13 @@
 from tkinter import *
 from tkinter import messagebox
+from PIL import Image, ImageTk
 from controlador import ControladorPokemon
 
 controlador = ControladorPokemon()
 ventana = Tk()
 
-controlador.generarPokemonAleatorio()
+imagen = controlador.generarPokemonAleatorio()
+print(imagen)
 
 
 def enviarDato():
@@ -44,6 +46,8 @@ miFrame.pack()
 
 tituloLabel = Label(miFrame, text="¿Quién es ese pokemon?", font=("Comic Sans MS", 30))
 tituloLabel.grid(row=0, column=1)
+
+fotoLabel = Label(ventana, image=imagen).pack()
 
 cuadroTexto = Entry(miFrame)
 cuadroTexto.grid(row=2, column=1, padx=150)

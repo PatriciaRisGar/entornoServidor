@@ -1,10 +1,13 @@
 import random
 import requests
 import json
+from PIL import ImageTk
+from urllib.request import urlopen
 
 
 class ControladorPokemon:
     NombrePokemon = ""
+    ImagenPokemon = None
 
     # Constructor vacío
     def __init__(self):
@@ -32,7 +35,11 @@ class ControladorPokemon:
         if pruebaDirecta.status_code == 200:
             json_diccionario = json.loads(pruebaDirecta.text)
             self.NombrePokemon = json_diccionario["name"]
+            self.ImagenPokemon = json_diccionario["sprites"]["front_default"]
+            data = urlopen(self.ImagenPokemon)
+            image = ImageTk.PhotoImage(data=data.read())
             print(self.NombrePokemon)
+            return image
 
         else:
             print("La API no responde correctamente " + pruebaDirecta)

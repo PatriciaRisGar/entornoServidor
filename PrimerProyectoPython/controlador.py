@@ -15,7 +15,7 @@ class ControladorPokemon:
 
     # Definicion funcion
     def comprobarNombrePokemon(self, pokemonUsu):
-        if pokemonUsu == self.NombrePokemon:
+        if pokemonUsu.lower() == self.NombrePokemon.lower():
             return True
         else:
             return False
@@ -24,22 +24,20 @@ class ControladorPokemon:
         # Número aleatorio que será el id del pokemon a adivinar
         aleatorioID = random.randint(1, 20)
 
-        print(aleatorioID)
-
         # Llamada a la API
-        pruebaDirecta = requests.get(
+        datosPokemon = requests.get(
             f"https://pokeapi.co/api/v2/pokemon-form/{aleatorioID}/"
         )
 
         # JSON a dictionario si API responde
-        if pruebaDirecta.status_code == 200:
-            json_diccionario = json.loads(pruebaDirecta.text)
+        if datosPokemon.status_code == 200:
+            json_diccionario = json.loads(datosPokemon.text)
             self.NombrePokemon = json_diccionario["name"]
             self.ImagenPokemon = json_diccionario["sprites"]["front_default"]
-            data = urlopen(self.ImagenPokemon)
-            image = ImageTk.PhotoImage(data=data.read())
+            datos = urlopen(self.ImagenPokemon)
+            imagenGUI = ImageTk.PhotoImage(data=datos.read())
             print(self.NombrePokemon)
-            return image
+            return imagenGUI
 
         else:
-            print("La API no responde correctamente " + pruebaDirecta)
+            print("La API no responde correctamente " + datosPokemon)

@@ -30,3 +30,16 @@ Temática:
     He decidido usar PokéAPI (https://pokeapi.co/api/v2/pokemon-form/).
     Mi aplicación escogerá un pokemon aleatoriamente y mostrará la imagen al usuario, el cual debe introducir el nombre del mismo. 
     El lenguaje a usar es Python3 y crearé la interfaz para el usuario con Tkinter.
+
+Documentación:
+    Presento mi primera aplicación: Pokemón adivino, en el que intento recrear el juego de televisión
+    en el que ponían la sombra del pokemon y tenías que decir su nombre.
+
+    Al iniciarse genera un número random que corresponde al ID del pokemon en la api. Una vez en la api
+    del pokemon correspondiente, recogemos los datos de su nombre y su imagen (frontal).
+    Para así crear la ventana en la que nos aparece la imagen del pokemon y una entrada para que el usuario
+    introduzca el nombre que considere oportuno.
+    Al pulsar el botón se procesan los datos en el controlador para comparar que sean iguales. De ser así
+    aparece una ventana modal indicando el acierto.De lo contrario ejecuta una ventana modal de error.
+
+    Tras cerrar la ventana modal, habilito un botón que permite finalizar el programa.

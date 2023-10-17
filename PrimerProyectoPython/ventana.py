@@ -1,13 +1,11 @@
 from tkinter import *
 from tkinter import messagebox
-from PIL import Image, ImageTk
 from controlador import ControladorPokemon
 
 controlador = ControladorPokemon()
 ventana = Tk()
 
 imagen = controlador.generarPokemonAleatorio()
-print(imagen)
 
 
 def enviarDato():
@@ -23,14 +21,22 @@ def cerrar():
     ventana.destroy()
 
 
+def recargarFrame(imagen):
+    fotoLabel.configure(image=imagen)
+    fotoLabel.image = imagen
+    cuadroTexto.delete(0, END)
+
+
 def infoAcierto():
-    messagebox.showinfo("Solución", "WIN")
-    btonCerrar = Button(ventana, text="Cerrar", command=cerrar)
+    messagebox.showinfo("Solución", "Acertaste")
+    btonCerrar = Button(ventana, text="Salir del programa", command=cerrar)
+    imagen = controlador.generarPokemonAleatorio()
     btonCerrar.pack()
+    recargarFrame(imagen)
 
 
 def infoError():
-    messagebox.showwarning("Solución", "LOSER")
+    messagebox.showwarning("Solución", "Perdiste")
     btonCerrar = Button(ventana, text="Cerrar", command=cerrar)
     btonCerrar.pack()
 
@@ -38,19 +44,21 @@ def infoError():
 # Ajustes ventana
 ventana.resizable(0, 0)
 ventana.title("Pokemon adivino")
+ventana.geometry("500x300")
 
 
 # Crear frame
-miFrame = Frame(ventana, width=900, height=800)
+miFrame = Frame(ventana, padx=20, pady=50)
 miFrame.pack()
 
-tituloLabel = Label(miFrame, text="¿Quién es ese pokemon?", font=("Comic Sans MS", 30))
+tituloLabel = Label(miFrame, text="¿Quién es ese pokemon?")
 tituloLabel.grid(row=0, column=1)
 
-fotoLabel = Label(ventana, image=imagen).pack()
+fotoLabel = Label(miFrame, image=imagen)
+fotoLabel.grid(row=1, column=1)
 
 cuadroTexto = Entry(miFrame)
-cuadroTexto.grid(row=2, column=1, padx=150)
+cuadroTexto.grid(row=3, column=1, padx=150)
 
 boton = Button(ventana, text="Adivinar", command=enviarDato)
 boton.pack()

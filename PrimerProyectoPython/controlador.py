@@ -20,6 +20,7 @@ class ControladorPokemon:
         else:
             return False
 
+    # Traer pokemon de la API
     def generarPokemonAleatorio(self):
         # Número aleatorio que será el id del pokemon a adivinar
         aleatorioID = random.randint(1, 20)
@@ -29,7 +30,7 @@ class ControladorPokemon:
             f"https://pokeapi.co/api/v2/pokemon-form/{aleatorioID}/"
         )
 
-        # JSON a dictionario si API responde
+        # JSON a dicionario si API responde
         if datosPokemon.status_code == 200:
             json_diccionario = json.loads(datosPokemon.text)
             self.NombrePokemon = json_diccionario["name"]

@@ -50,6 +50,6 @@ Ejecución:
 
     Para instalar las dependencias necesarias, vamos a ejecutar el siguiente comando:
         $ pip install -r requirements.txt
-    *es posible que aparezca un error respecto a python y nos informe de una nueva version de pip. Ignoramos.
+    *es posible que nos informe de una nueva version de pip. Ignoramos.
 
-    A continuación ejecutamos la aplicación.
+    A continuación ejecutamos la aplicación. La ruta completa hasta llegar a ventana.py.

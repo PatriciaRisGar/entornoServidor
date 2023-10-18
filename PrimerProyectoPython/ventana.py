@@ -8,6 +8,7 @@ ventana = Tk()
 imagen = controlador.generarPokemonAleatorio()
 
 
+# Pasar valor cuadroTexto a controlador
 def enviarDato():
     pokemonUsu = cuadroTexto.get()
 
@@ -17,16 +18,19 @@ def enviarDato():
         infoError()
 
 
+# Cerrar ventana
 def cerrar():
     ventana.destroy()
 
 
+# Cuando acierta trae otro pokemon
 def recargarFrame(imagen):
     fotoLabel.configure(image=imagen)
     fotoLabel.image = imagen
     cuadroTexto.delete(0, END)
 
 
+# Modal acierto
 def infoAcierto():
     messagebox.showinfo("Solución", "Acertaste")
     btonCerrar = Button(ventana, text="Salir del programa", command=cerrar)
@@ -35,6 +39,7 @@ def infoAcierto():
     recargarFrame(imagen)
 
 
+# Modal error
 def infoError():
     messagebox.showwarning("Solución", "Perdiste")
     btonCerrar = Button(ventana, text="Cerrar", command=cerrar)

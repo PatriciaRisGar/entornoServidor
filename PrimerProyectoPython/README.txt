@@ -25,6 +25,8 @@ La aplicación debe cumplir con los siguientes requisitos mínimos:
     Presentación: Al final del proyecto, el alumnado debe presentar su aplicación y su funcionamiento ante el grupo y el profesor, destacando las características 
     implementadas y los problemas superados. Además, deberá crear un vídeo de menos de 2 minutos con los highlights de la app.
 
+
+
 Temática:
 
     He decidido usar PokéAPI (https://pokeapi.co/api/v2/pokemon-form/).
@@ -43,3 +45,11 @@ Documentación:
     aparece una ventana modal indicando el acierto.De lo contrario ejecuta una ventana modal de error.
 
     Tras cerrar la ventana modal, habilito un botón que permite finalizar el programa.
+
+Ejecución:
+
+    Para instalar las dependencias necesarias, vamos a ejecutar el siguiente comando:
+        $ pip install -r requirements.txt
+    *es posible que aparezca un error respecto a python y nos informe de una nueva version de pip. Ignoramos.
+
+    A continuación ejecutamos la aplicación.

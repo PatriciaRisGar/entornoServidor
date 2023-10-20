@@ -4,15 +4,6 @@ from controlador import ControladorPokemon
 import subprocess
 
 
-def instalar_dependencias(requisitos):
-    # Ejecutar pip para instalar las dependencias desde el archivo de requisitos
-    subprocess.check_call(["pip", "install", "-r", requisitos])
-
-
-if __name__ == "__main__":
-    instalar_dependencias("requirements.txt")
-
-
 controlador = ControladorPokemon()
 ventana = Tk()
 

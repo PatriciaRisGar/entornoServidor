@@ -1,8 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 from controlador import ControladorPokemon
-import subprocess
-
 
 controlador = ControladorPokemon()
 ventana = Tk()

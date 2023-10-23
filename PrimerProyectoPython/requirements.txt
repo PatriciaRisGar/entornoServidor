@@ -1,5 +1,5 @@
 #python ~= 3.10.12
 #pip ~= 23.2.1
-requests ~= 2.31.0
-tk ~= 0.1.0
+#tkinter ~= 0.1.0 es una biblioteca que no se instala con pip: sudo apt-get install python3-tk
 Pillow ~= 10.0.1
+requests ~= 2.31.0

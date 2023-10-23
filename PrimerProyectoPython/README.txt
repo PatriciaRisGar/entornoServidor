@@ -50,6 +50,9 @@ Ejecución:
 
     Para instalar las dependencias necesarias, vamos a ejecutar el siguiente comando:
         $ pip install -r requirements.txt
+        tkinter ~= 0.1.0 es una biblioteca que no se instala con pip: 
+            sudo apt-get install python3-tk
+            
     *es posible que nos informe de una nueva version de pip. Ignoramos.
 
     A continuación ejecutamos la aplicación. La ruta completa hasta llegar a ventana.py.
